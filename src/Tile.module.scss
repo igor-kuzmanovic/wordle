@@ -50,6 +50,15 @@
     transform: rotateX(0) translateY(0);
   }
 
+  &--invalid,
+  &--correct,
+  &--partial,
+  &--win {
+    transition: background-color 0.25s ease-in-out
+        calc(var(--animation-delay, 0) + 0.25s),
+      border-color 0.25s ease-in-out calc(var(--animation-delay, 0) + 0.25s);
+  }
+
   & + & {
     margin-inline-start: 0.25em;
   }
