@@ -54,9 +54,9 @@
   &--correct,
   &--partial,
   &--win {
-    transition: background-color 0.25s ease-in-out
+    transition: background-color 1ms ease-in-out
         calc(var(--animation-delay, 0) + 0.25s),
-      border-color 0.25s ease-in-out calc(var(--animation-delay, 0) + 0.25s);
+      border-color 1ms ease-in-out calc(var(--animation-delay, 0) + 0.25s);
   }
 
   & + & {
