@@ -6,7 +6,7 @@
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "echo 'wordle.igorkuzmanovic.com' > ./build/CNAME && gh-pages -d build",
+    "deploy": "cp ./CNAME ./build/CNAME && gh-pages -d build",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
     "test": "react-scripts test"
