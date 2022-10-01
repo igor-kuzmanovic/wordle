@@ -1,0 +1,48 @@
+.Key {
+  flex: 1;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: var(--key-bg);
+  border-radius: 0.25em;
+  text-transform: capitalize;
+  line-height: 1;
+
+  &:hover,
+  &:active {
+    --key-bg: var(--key-hover-bg);
+  }
+
+  &--invalid {
+    --key-bg: var(--key-invalid-bg);
+
+    &:hover,
+    &:active {
+      --key-bg: var(--key-invalid-bg);
+    }
+  }
+
+  &--correct {
+    --key-bg: var(--key-correct-bg);
+
+    &:hover,
+    &:active {
+      --key-bg: var(--key-correct-bg);
+    }
+  }
+
+  &--partial {
+    --key-bg: var(--key-partial-bg);
+
+    &:hover,
+    &:active {
+      --key-bg: var(--key-partial-bg);
+    }
+  }
+
+  & + & {
+    margin-inline-start: 0.25em;
+  }
+}

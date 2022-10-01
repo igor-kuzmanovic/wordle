@@ -1,0 +1,7 @@
+.KeyboardRow {
+  display: flex;
+
+  & + & {
+    margin-block-start: 0.5em;
+  }
+}

@@ -1,0 +1,15 @@
+.Keyboard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-inline: auto;
+  width: 100%;
+
+  &__row {
+    display: flex;
+  }
+
+  &__row + &__row {
+    margin-block-start: 0.5em;
+  }
+}

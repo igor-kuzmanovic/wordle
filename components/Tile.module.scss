@@ -1,0 +1,87 @@
+.Tile {
+  height: 2em;
+  width: 2em;
+  font-size: 1.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  border: 2px solid var(--tile-border);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  background-color: var(--tile-bg);
+
+  @media (min-width: 576px) {
+    font-size: 2em;
+  }
+
+  &--filled {
+    animation: zoom 0.125s ease-in-out;
+    transform: scale(1);
+    --tile-border: var(--tile-filled-border);
+  }
+
+  &--invalid {
+    --tile-bg: var(--tile-invalid-bg);
+    --tile-border: var(--tile-invalid-border);
+  }
+
+  &--correct {
+    --tile-bg: var(--tile-correct-bg);
+    --tile-border: var(--tile-correct-border);
+  }
+
+  &--partial {
+    --tile-bg: var(--tile-partial-bg);
+    --tile-border: var(--tile-partial-border);
+  }
+
+  &--invalid,
+  &--correct,
+  &--partial {
+    animation: flip 0.5s ease-in-out var(--animation-delay, 0);
+    transform: rotateX(0);
+  }
+
+  &--win {
+    animation: flip 0.5s ease-in-out var(--animation-delay, 0),
+      jump 0.5s ease-in-out infinite calc(var(--animation-delay, 0) + 1s);
+    transform: rotateX(0) translateY(0);
+  }
+
+  &--invalid,
+  &--correct,
+  &--partial,
+  &--win {
+    transition: background-color 1ms ease-in-out
+        calc(var(--animation-delay, 0) + 0.25s),
+      border-color 1ms ease-in-out calc(var(--animation-delay, 0) + 0.25s);
+  }
+
+  & + & {
+    margin-inline-start: 0.25em;
+  }
+}
+
+@keyframes zoom {
+  90% {
+    transform: scale(1.125);
+  }
+}
+
+@keyframes flip {
+  50% {
+    transform: rotateX(0.25turn);
+  }
+}
+
+@keyframes jump {
+  20% {
+    transform: translateY(-0.5em);
+  }
+
+  80% {
+    transform: translateY(0.125em);
+  }
+}
