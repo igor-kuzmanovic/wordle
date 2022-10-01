@@ -1,0 +1,9 @@
+{
+  "short_name": "Wordle",
+  "name": "Igor Kuzmanović - Wordle",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fafafa",
+  "background_color": "#171717"
+}
