@@ -1,16 +1,19 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Game from "../components/Game";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <Head>
         <title>Igor Kuzmanović - Wordle</title>
         <meta name="theme-color" content="#fafafa" />
         <meta name="description" content="Wordle clone by Igor Kuzmanović" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Igor Kuzmanović" />
-        <link rel="canonical" href="https://wordle.igorkuzmanovic.com/" />
+        <link
+          rel="canonical"
+          href="https://igor-kuzmanovic.github.io/wordle/"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -34,6 +37,4 @@ const Home: NextPage = () => {
       <Game />
     </>
   );
-};
-
-export default Home;
+}

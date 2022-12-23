@@ -2,28 +2,25 @@
   "name": "igor-kuzmanovic-wordle",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://wordle.igorkuzmanovic.com/",
+  "homepage": "https://igor-kuzmanovic.github.io/wordle/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.3.1",
+    "@next/font": "13.1.0",
+    "@types/node": "18.11.17",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.1.0",
+    "next": "13.1.0",
+    "prettier": "2.8.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "@types/gtag.js": "^0.0.11",
-    "@types/node": "18.7.23",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1",
-    "prettier": "^2.7.1",
-    "sass": "^1.55.0",
-    "typescript": "4.8.4"
+    "react-dom": "18.2.0",
+    "sass": "1.57.1",
+    "typescript": "4.9.4"
   }
 }
