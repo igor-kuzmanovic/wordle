@@ -1,4 +1,4 @@
-import styles from "./KeyboardRow.module.scss";
+import styles from './KeyboardRow.module.scss';
 
 interface KeyboardRowProps {
   children: React.ReactNode;

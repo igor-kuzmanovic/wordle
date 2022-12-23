@@ -1,17 +1,17 @@
-import { useCallback, useEffect } from "react";
-import KeyboardRow from "./KeyboardRow";
-import Key, { KeyStatus } from "./Key";
-import styles from "./Keyboard.module.scss";
+import { useCallback, useEffect } from 'react';
+import KeyboardRow from './KeyboardRow';
+import Key, { KeyStatus } from './Key';
+import styles from './Keyboard.module.scss';
 
-const KeyboardRow1 = "qwertyuiop";
-const KeyboardRow2 = "asdfghjkl";
-const KeyboardRow3 = "zxcvbnm";
+const KeyboardRow1 = 'qwertyuiop';
+const KeyboardRow2 = 'asdfghjkl';
+const KeyboardRow3 = 'zxcvbnm';
 
-export const EmptyKey = "";
+export const EmptyKey = '';
 
 export const enum SpecialKey {
-  Backspace = "Backspace",
-  Enter = "Enter",
+  Backspace = 'Backspace',
+  Enter = 'Enter',
 }
 
 interface KeyboardProps {
@@ -56,15 +56,15 @@ export default function Keyboard({
   );
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeydown);
+    window.addEventListener('keydown', handleKeydown);
 
-    return () => window.removeEventListener("keydown", handleKeydown);
+    return () => window.removeEventListener('keydown', handleKeydown);
   }, [handleKeydown]);
 
   return (
     <div className={styles.Keyboard}>
       <KeyboardRow>
-        {KeyboardRow1.split("").map((value) => (
+        {KeyboardRow1.split('').map((value) => (
           <Key
             key={value}
             value={value}
@@ -82,7 +82,7 @@ export default function Keyboard({
         ))}
       </KeyboardRow>
       <KeyboardRow>
-        {KeyboardRow2.split("").map((value) => (
+        {KeyboardRow2.split('').map((value) => (
           <Key
             key={value}
             value={value}
@@ -100,8 +100,8 @@ export default function Keyboard({
         ))}
       </KeyboardRow>
       <KeyboardRow>
-        <Key value={"Undo"} onClick={() => typeKey(SpecialKey.Backspace)} />
-        {KeyboardRow3.split("").map((value) => (
+        <Key value={'Undo'} onClick={() => typeKey(SpecialKey.Backspace)} />
+        {KeyboardRow3.split('').map((value) => (
           <Key
             key={value}
             value={value}
@@ -117,7 +117,7 @@ export default function Keyboard({
             onClick={() => typeKey(value)}
           />
         ))}
-        <Key value={"Enter"} onClick={() => typeKey(SpecialKey.Enter)} />
+        <Key value={'Enter'} onClick={() => typeKey(SpecialKey.Enter)} />
       </KeyboardRow>
     </div>
   );

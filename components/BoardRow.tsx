@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import styles from "./BoardRow.module.scss";
+import { useEffect } from 'react';
+import styles from './BoardRow.module.scss';
 
 interface BoardRowProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ export default function BoardRow({
   isInvalidWord,
   onAnimateInvalid,
 }: BoardRowProps) {
-  const className = isInvalidWord ? styles["BoardRow--invalid"] : undefined;
+  const className = isInvalidWord ? styles['BoardRow--invalid'] : undefined;
 
   useEffect(() => {
     if (isInvalidWord) {
@@ -23,6 +23,6 @@ export default function BoardRow({
   }, [isInvalidWord, onAnimateInvalid]);
 
   return (
-    <div className={`${styles.BoardRow} ${className ?? ""}`}>{children}</div>
+    <div className={`${styles.BoardRow} ${className ?? ''}`}>{children}</div>
   );
 }

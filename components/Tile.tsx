@@ -1,5 +1,5 @@
-import { CSSProperties } from "react";
-import styles from "./Tile.module.scss";
+import { CSSProperties } from 'react';
+import styles from './Tile.module.scss';
 
 export const enum TileStatus {
   None,
@@ -23,23 +23,23 @@ export default function Tile({
 }: TileProps) {
   let className =
     status === TileStatus.Invalid
-      ? styles["Tile--invalid"]
+      ? styles['Tile--invalid']
       : status === TileStatus.Correct
-      ? styles["Tile--correct"]
+      ? styles['Tile--correct']
       : status === TileStatus.Partial
-      ? styles["Tile--partial"]
+      ? styles['Tile--partial']
       : value
-      ? styles["Tile--filled"]
+      ? styles['Tile--filled']
       : undefined;
 
   if (shouldAnimateWin) {
-    className = `${className ?? ""} ${styles["Tile--win"]}`;
+    className = `${className ?? ''} ${styles['Tile--win']}`;
   }
 
   return (
     <div
-      className={`${styles.Tile} ${className ?? ""}`}
-      style={{ "--animation-delay": `${index * 0.125}s` } as CSSProperties}
+      className={`${styles.Tile} ${className ?? ''}`}
+      style={{ '--animation-delay': `${index * 0.125}s` } as CSSProperties}
     >
       {value}
     </div>

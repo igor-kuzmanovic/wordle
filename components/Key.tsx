@@ -1,5 +1,5 @@
-import { useCallback } from "react";
-import styles from "./Key.module.scss";
+import { useCallback } from 'react';
+import styles from './Key.module.scss';
 
 export const enum KeyStatus {
   None,
@@ -21,11 +21,11 @@ export default function Key({
 }: KeyProps) {
   const className =
     status === KeyStatus.Invalid
-      ? styles["Key--invalid"]
+      ? styles['Key--invalid']
       : status === KeyStatus.Correct
-      ? styles["Key--correct"]
+      ? styles['Key--correct']
       : status === KeyStatus.Partial
-      ? styles["Key--partial"]
+      ? styles['Key--partial']
       : undefined;
 
   const handleClick = useCallback(
@@ -37,7 +37,7 @@ export default function Key({
 
   return (
     <button
-      className={`${styles.Key} ${className ?? ""}`}
+      className={`${styles.Key} ${className ?? ''}`}
       onClick={() => handleClick(value)}
     >
       {value}

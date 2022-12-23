@@ -1,6 +1,6 @@
-import BoardRow from "./BoardRow";
-import Tile, { TileStatus } from "./Tile";
-import styles from "./Board.module.scss";
+import BoardRow from './BoardRow';
+import Tile, { TileStatus } from './Tile';
+import styles from './Board.module.scss';
 
 interface BoardProps {
   numberOfTries: number;

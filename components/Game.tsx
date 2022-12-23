@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Link from "next/link";
-import { wordGuesslist, wordAllowlist } from "../lib/dictionary-5";
-import Board from "./Board";
-import { TileStatus } from "./Tile";
-import Keyboard, { EmptyKey, SpecialKey } from "./Keyboard";
-import Alert from "./Alert";
+import { useState } from 'react';
+import Link from 'next/link';
+import { wordGuesslist, wordAllowlist } from '../lib/dictionary-5';
+import Board from './Board';
+import { TileStatus } from './Tile';
+import Keyboard, { EmptyKey, SpecialKey } from './Keyboard';
+import Alert from './Alert';
 
 const wordLength = 5;
 const numberOfTries = 6;
@@ -51,8 +51,8 @@ export default function Game() {
     } else if (value === SpecialKey.Enter) {
       if (gameState.row < numberOfTries && gameState.tile === wordLength) {
         if (
-          !wordGuesslist.includes(gameState.tiles[gameState.row].join("")) &&
-          !wordAllowlist.includes(gameState.tiles[gameState.row].join(""))
+          !wordGuesslist.includes(gameState.tiles[gameState.row].join('')) &&
+          !wordAllowlist.includes(gameState.tiles[gameState.row].join(''))
         ) {
           setIsInvalidWord(true);
           return gameState;
@@ -69,7 +69,7 @@ export default function Game() {
             guessWordCopy = `${guessWordCopy.substring(
               0,
               tileIndex
-            )}${" "}${guessWordCopy.substring(
+            )}${' '}${guessWordCopy.substring(
               tileIndex + 1,
               guessWordCopy.length
             )}`;
@@ -89,7 +89,7 @@ export default function Game() {
             gameState.validity[gameState.row][tileIndex] === TileStatus.None
           ) {
             if (guessWordCopy.includes(tile)) {
-              guessWordCopy = guessWordCopy.replace(tile, " ");
+              guessWordCopy = guessWordCopy.replace(tile, ' ');
 
               if (!correctKeysCopy.has(tile)) {
                 partialKeysCopy.add(tile);
@@ -110,7 +110,7 @@ export default function Game() {
         setPartialKeys(partialKeysCopy);
         setCorrectKeys(correctKeysCopy);
 
-        if (gameState.tiles[gameState.row].join("") === guessWord) {
+        if (gameState.tiles[gameState.row].join('') === guessWord) {
           setTimeout(() => {
             setIsGameWon(true);
           }, 1500);
@@ -165,7 +165,7 @@ export default function Game() {
       />
       <footer>
         <p>
-          Play the original{" "}
+          Play the original{' '}
           <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a>
         </p>
       </footer>
@@ -177,7 +177,7 @@ export default function Game() {
       </Alert>
       <Alert isShown={isGameLost}>
         <p>
-          The correct word was <strong>{guessWord}</strong>!{" "}
+          The correct word was <strong>{guessWord}</strong>!{' '}
           {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a href="/">Play again</a>
         </p>
